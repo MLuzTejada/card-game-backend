@@ -1,6 +1,6 @@
 class PlayerController < ApplicationController
     before_action :set_player_by_name_password, only:[:login]
-    before_action :set_player_by_id, only:[:logout, :update, :setUno, :update_password, :update_image, :getGame]
+    before_action :set_player_by_id, only:[:logout, :update, :setUno, :update_password, :getGame]
     before_action :check_token, only:[:logout, :setUno, :update, :update_password, :getGame]
     before_action :set_game_by_player_id, only:[:getGame]
 
@@ -54,16 +54,6 @@ class PlayerController < ApplicationController
         end
     end
 
-    # # PUT player/:id/image
-    # def update_image
-    #     puts("params: ", params)
-    #     if @player.update(player_image_params)
-    #       render json: @player
-    #     else
-    #       render json: @player.errors, status: :unprocessable_entity
-    #     end
-    # end
-
     # GET player/:id/getGame
     def getGame
         if @game.nil?
@@ -94,10 +84,6 @@ class PlayerController < ApplicationController
         def player_password_params
             params.require(:player).permit(:password)
         end
-
-        # def player_image_params
-        #     params.require(:player).permit(:image)
-        # end
 
         def set_player_by_name_password
             @player = Player.find_by(username: params[:username], password: params[:password])

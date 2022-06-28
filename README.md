@@ -627,46 +627,6 @@ curl --location --request PUT 'https://localhost:3000/player/3/password' \
   }
   ```
 
-
-#### Update the image of a player
-
-##### Request
-
-```http
-  PUT player/:id/image
-```
-
-| Headers | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Authorization`      | `string` | **Required**. Your API token|
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. Id of the player you want to update the profile image|
-
-
-##### Request example
-```
-```
-
-  ##### Sucess Response
-
-  ```
-  ```
-
-  ##### Error Response
-  ```
-  {
-    "message": "Jugador no encontrado"
-  }
-  ```
-
-  ```
-  {
-    "message": "Jugador no autorizado"
-  }
-  ```
-
 #### Set "UNO" to a player
 
 ##### Request
