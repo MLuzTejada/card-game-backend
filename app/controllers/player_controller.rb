@@ -99,7 +99,6 @@ class PlayerController < ApplicationController
             false
         end
 
-        private
         def set_game_by_player_id
             @game = Player.find(params[:id]).games.last
         end
